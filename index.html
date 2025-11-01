@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubyHome - Luxury Real Estate</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo" aria-label="RubyHome - перейти на главную">
+                <img src="assets/icons/logo.svg" alt="RubyHome логотип" class="header__logo-img">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="#home" class="header__nav-link header__nav-link--active" data-section="home" aria-label="Перейти на главную">Home</a>
+                <a href="#properties" class="header__nav-link" data-section="properties" aria-label="Смотреть объекты недвижимости">Properties</a>
+                <a href="#features" class="header__nav-link" data-section="features" aria-label="Узнать о нас">About us</a>
+                <a href="#reviews" class="header__nav-link" data-section="reviews" aria-label="Смотреть отзывы">Reviews</a>
+            </nav>
+
+            <button class="header__button" aria-label="Связаться с нами" data-modal-open>Contact us</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Find the perfect place to stay with your family</h1>
+                    <p class="hero__subtitle">Buying a home is a life-changing experience, so shouldn't your real estate agent be a life changer</p>
+                    <button class="hero__button" aria-label="Оставить заявку" data-modal-open>Leave request</button>
+                </div>
+
+                <div class="hero__image-wrapper">
+                    <img 
+                        src="assets/img/hero.png" 
+                        alt="Современное здание с синими окнами и оранжевым элементом" 
+                        class="hero__image"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="partners" id="partners">
+            <div class="partners__container">
+                <h2 class="partners__title">Our Partners</h2>
+                <div class="partners__logos">
+                    <img src="assets/img/biotech.png" alt="Biotech logo" class="partners__logo" loading="lazy">
+                    <img src="assets/img/express.png" alt="Express logo" class="partners__logo" loading="lazy">
+                    <img src="assets/img/smile-home.png" alt="Smile Home logo" class="partners__logo" loading="lazy">
+                    <img src="assets/img/connect.png" alt="Connect logo" class="partners__logo" loading="lazy">
+                    <img src="assets/img/home-build.png" alt="Home Build logo" class="partners__logo" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="properties" id="properties">
+            <div class="properties__container">
+                <h2 class="properties__title">Popular Properties</h2>
+                <div class="properties__grid">
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house1.jpg" alt="Capital hill residence" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Capital hill residence</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$5527.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Capital hill residence" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house2.jpg" alt="Picket Fence Realty" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Picket Fence Realty</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$6727.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Picket Fence Realty" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house3.jpg" alt="Banyon Tree Realty" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Banyon Tree Realty</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$4327.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Banyon Tree Realty" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house4.jpg" alt="Corsair Real Estate" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Corsair Real Estate</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$4427.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Corsair Real Estate" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house5.jpg" alt="Sequoia Real Estate" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Sequoia Real Estate</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$4527.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Sequoia Real Estate" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card">
+                        <div class="property-card__image-wrapper">
+                            <img src="assets/img/house6.jpg" alt="Strive Partners Realty" class="property-card__image" loading="lazy">
+                        </div>
+                        <div class="property-card__content">
+                            <h3 class="property-card__title">Strive Partners Realty</h3>
+                            <div class="property-card__address">
+                                <img src="assets/icons/location.svg" alt="Location" class="property-card__location-icon">
+                                <span class="property-card__location-text">East London</span>
+                            </div>
+                            <div class="property-card__features">
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bedrooms.svg" alt="Bedrooms" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">6</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/kitchen.svg" alt="Kitchen" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">2</span>
+                                </div>
+                                <div class="property-card__feature">
+                                    <img src="assets/icons/bathroom.svg" alt="Bathroom" class="property-card__feature-icon">
+                                    <span class="property-card__feature-text">3</span>
+                                </div>
+                            </div>
+                            <div class="property-card__footer">
+                                <span class="property-card__price">$5527.00</span>
+                                <button class="property-card__button" aria-label="Оставить заявку на Strive Partners Realty" data-modal-open>Leave request</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="features" id="features" aria-labelledby="features-title">
+            <div class="features__container">
+                <h2 class="features__title" id="features-title">Property Featured</h2>
+                <p class="features__subtitle">Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there’s plenty of</p>
+
+                <div class="features__grid" role="list">
+                    <div class="features__col" role="listitem">
+                        <article class="feature-card" tabindex="0" aria-label="100% Security">
+                            <div class="feature-card__icon"><img src="assets/icons/security.svg" width="46" height="46" alt="Security"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">100% Security</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                        <article class="feature-card" tabindex="0" aria-label="Free air conditioner">
+                            <div class="feature-card__icon"><img src="assets/icons/conditioner.svg" width="46" height="46" alt="Air conditioner"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">Free air conditioner</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                        <article class="feature-card" tabindex="0" aria-label="Flower garden">
+                            <div class="feature-card__icon"><img src="assets/icons/garden.svg" width="46" height="46" alt="Flower garden"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">Flower garden</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="features__image-col" aria-hidden="false">
+                        <div class="features__image-wrapper">
+                            <img src="assets/img/house7.png" alt="Modern building" class="features__image" loading="lazy" width="362" height="548">
+                        </div>
+                    </div>
+
+                    <div class="features__col" role="listitem">
+                        <article class="feature-card" tabindex="0" aria-label="Parkers & movers">
+                            <div class="feature-card__icon"><img src="assets/icons/car.svg" width="46" height="46" alt="Parkers & movers"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">Parkers & movers</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                        <article class="feature-card" tabindex="0" aria-label="Rental furniture">
+                            <div class="feature-card__icon"><img src="assets/icons/furniture.svg" width="46" height="46" alt="Rental furniture"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">Rental furniture</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                        <article class="feature-card" tabindex="0" aria-label="Swimming pool">
+                            <div class="feature-card__icon"><img src="assets/icons/swimming-pool.svg" width="46" height="46" alt="Swimming pool"></div>
+                            <div class="feature-card__body">
+                                <h3 class="feature-card__title">Swimming pool</h3>
+                                <p class="feature-card__text">For many of us, buying a home is a dre and one not easily attainable.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+            <div class="reviews__container">
+                <p class="reviews__eyebrow">REVIEWS</p>
+                <h2 class="reviews__title" id="reviews-title">Our valuable customer says</h2>
+
+                <div class="reviews__slider swiper" aria-roledescription="carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/justin.png" alt="Justin Lee" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Justin Lee</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spend more money.Been there. Done that. Sold. Bought Bringing It All Together.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/angel.png" alt="Angel Cathe" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Angel Cathe</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spend more money.Been there. Done that. Sold. Bought Bringing It All Together there.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/justin.png" alt="Justin Lee" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Justin Lee</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">They know the market and negotiate great deals. Highly recommended for anyone buying or selling property.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/angel.png" alt="Angel Cathe" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Angel Cathe</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">From first call to closing, the process was smooth and transparent. Communication was always timely.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/justin.png" alt="Justin Lee" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Justin Lee</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">Professional approach with a personal touch. Found us the perfect place within our budget.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/angel.png" alt="Angel Cathe" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Angel Cathe</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">Market insights were spot on and helped us make confident decisions quickly.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/justin.png" alt="Justin Lee" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Justin Lee</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">Their team handled everything — scheduling, paperwork, and negotiations — flawlessly.</p>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <img src="assets/img/angel.png" alt="Angel Cathe" class="review-card__avatar" width="56" height="56" loading="lazy">
+                                <div class="review-card__header">
+                                    <h3 class="review-card__name">Angel Cathe</h3>
+                                    <p class="review-card__role">Products Designer at Ito</p>
+                                </div>
+                                <img src="assets/icons/left-quote (1) 1.svg" alt="quote" class="review-card__quote-icon" width="64" height="64" aria-hidden="true">
+                                <p class="review-card__text">We felt supported at every step. Couldn’t ask for a better experience.</p>
+                            </article>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="reviews__dots" aria-label="Slider pagination" role="tablist">
+                    <button class="reviews__dot reviews__dot--active" aria-label="Go to page 1" data-page="0" tabindex="0"></button>
+                    <button class="reviews__dot" aria-label="Go to page 2" data-page="1" tabindex="0"></button>
+                    <button class="reviews__dot" aria-label="Go to page 3" data-page="2" tabindex="0"></button>
+                    <button class="reviews__dot" aria-label="Go to page 4" data-page="3" tabindex="0"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe" id="subscribe" aria-labelledby="subscribe-title">
+            <div class="subscribe__container">
+                <h2 class="subscribe__title" id="subscribe-title">Get listed your home as a owner</h2>
+                <p class="subscribe__subtitle">Here is a list of the greatest real estate company slogans of all-time. These catchy slogans are followed by the Greatest Real Estate.</p>
+                
+                <form class="subscribe__form" novalidate>
+                    <div class="subscribe__input-wrapper">
+                        <input 
+                            type="email" 
+                            id="subscribe-email" 
+                            class="subscribe__input" 
+                            placeholder="Enter email address" 
+                            required
+                            aria-label="Enter your email address"
+                            aria-describedby="subscribe-error"
+                        >
+                        <button type="submit" class="subscribe__button" aria-label="Subscribe to newsletter">Subscribe</button>
+                    </div>
+                    <p class="subscribe__error" id="subscribe-error" role="alert" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">© 2025 RubyHome. All rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true" role="alert">
+        <div class="toast__overlay" data-toast-close></div>
+        <div class="toast__container">
+            <p class="toast__message">Your request has been sent</p>
+            <button class="toast__close" aria-label="Закрыть уведомление" data-toast-close>
+                <img src="assets/icons/close.svg" alt="Close" width="16" height="16">
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true" aria-labelledby="modal-title" role="dialog">
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <button class="modal__close" data-modal-close aria-label="Закрыть модальное окно">
+                <img src="assets/icons/close.svg" alt="Close" width="24" height="24">
+            </button>
+            <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
+            <form class="modal__form" id="modal-form" novalidate>
+                <div class="modal__field">
+                    <label for="modal-name" class="modal__label">Enter name</label>
+                    <input 
+                        type="text" 
+                        id="modal-name" 
+                        class="modal__input" 
+                        placeholder="Example: Mark" 
+                        required
+                        autocomplete="name"
+                        aria-required="true"
+                        aria-describedby="modal-name-error"
+                    >
+                    <p class="modal__error" id="modal-name-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <div class="modal__field">
+                    <label for="modal-phone" class="modal__label">Enter phone</label>
+                    <input 
+                        type="tel" 
+                        id="modal-phone" 
+                        class="modal__input" 
+                        placeholder="+7" 
+                        required
+                        autocomplete="tel"
+                        aria-required="true"
+                        aria-describedby="modal-phone-error"
+                    >
+                    <p class="modal__error" id="modal-phone-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <div class="modal__field">
+                    <label for="modal-email" class="modal__label">Enter email address</label>
+                    <input 
+                        type="email" 
+                        id="modal-email" 
+                        class="modal__input" 
+                        placeholder="email@example.com" 
+                        autocomplete="email"
+                        aria-describedby="modal-email-error"
+                    >
+                    <p class="modal__error" id="modal-email-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <div class="modal__field">
+                    <label class="modal__label modal__label--choice">I want to</label>
+                    <div class="modal__choice-group" role="radiogroup" aria-labelledby="modal-choice-label">
+                        <button type="button" class="modal__choice-btn modal__choice-btn--active" data-choice="buy" aria-pressed="true">Buy</button>
+                        <button type="button" class="modal__choice-btn" data-choice="rent" aria-pressed="false">Rent</button>
+                        <button type="button" class="modal__choice-btn" data-choice="sell" aria-pressed="false">Sell</button>
+                    </div>
+                </div>
+
+                <div class="modal__field">
+                    <label class="modal__checkbox-label">
+                        <input type="checkbox" id="modal-privacy" class="modal__checkbox" required aria-required="true" aria-describedby="modal-privacy-error">
+                        <span class="modal__checkbox-text">I agree to <a href="privacy.html" class="modal__link">Privacy Policy</a></span>
+                    </label>
+                    <p class="modal__error" id="modal-privacy-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <button type="submit" class="modal__submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
