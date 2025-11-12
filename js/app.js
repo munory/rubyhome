@@ -1,5 +1,4 @@
 // Main application entry point
-// Основная точка входа приложения
 
 const handleScroll = () => {
   const sections = document.querySelectorAll('section[id]');
@@ -44,7 +43,6 @@ const initNavigation = () => {
 };
 
 window.addEventListener('scroll', handleScroll);
-window.addEventListener('load', initNavigation);
 document.addEventListener('DOMContentLoaded', initNavigation);
 
 const initReviewsSlider = () => {
@@ -53,13 +51,14 @@ const initReviewsSlider = () => {
   // eslint-disable-next-line no-new
   const swiper = new Swiper(sliderEl, {
     slidesPerView: 2,
-    slidesPerGroup: 2, // один буллит = одна страница (2 карточки)
+    slidesPerGroup: 2,
     spaceBetween: 30,
     grabCursor: true,
     simulateTouch: true,
     breakpoints: {
       0: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 16 },
-      768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 30 },
+      768: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 30 },
+      1100: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 30 },
     },
     a11y: {
       enabled: true,
@@ -74,14 +73,12 @@ const initReviewsSlider = () => {
       dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === pageIndex));
     };
 
-    // Update on slide change
     swiper.on('slideChange', () => {
       const group = swiper.params.slidesPerGroup || 1;
       const pageIndex = Math.floor(swiper.activeIndex / group);
       setActiveDot(pageIndex);
     });
 
-    // Click handlers
     dots.forEach((dot) => {
       dot.addEventListener('click', () => {
         const page = Number(dot.getAttribute('data-page') || '0');
@@ -93,7 +90,6 @@ const initReviewsSlider = () => {
   }
 };
 
-window.addEventListener('load', initReviewsSlider);
 document.addEventListener('DOMContentLoaded', initReviewsSlider);
 
 const validateEmail = (email) => {
@@ -111,11 +107,9 @@ const handleSubscribeSubmit = (event) => {
   
   const email = emailInput.value.trim();
   
-  // Очистка предыдущих ошибок
   errorElement.textContent = '';
   emailInput.classList.remove('subscribe__input--error');
   
-  // Валидация
   if (!email) {
     errorElement.textContent = 'Please enter your email address';
     emailInput.classList.add('subscribe__input--error');
@@ -136,15 +130,13 @@ const handleSubscribeSubmit = (event) => {
   
   // Имитация отправки email (задержка 1.5 секунды)
   setTimeout(() => {
-    // Успешная отправка
     button.disabled = false;
     button.textContent = 'Subscribe';
     emailInput.value = '';
     errorElement.textContent = '';
     emailInput.classList.remove('subscribe__input--error');
     
-    // Показываем алерт
-    alert('Your email has been sent');
+    showToast('Your email has been sent');
   }, 1500);
 };
 
@@ -161,19 +153,16 @@ const initSubscribeForm = () => {
         const email = emailInput.value.trim();
         
         if (!email) {
-          // Очищаем ошибку при пустом поле
           if (errorElement) {
             errorElement.textContent = '';
           }
           emailInput.classList.remove('subscribe__input--error');
         } else if (!validateEmail(email)) {
-          // Показываем ошибку если email невалидный
           if (errorElement) {
             errorElement.textContent = 'Please enter a valid email address';
           }
           emailInput.classList.add('subscribe__input--error');
         } else {
-          // Очищаем ошибку если email валидный
           if (errorElement) {
             errorElement.textContent = '';
           }
@@ -197,7 +186,6 @@ const initSubscribeForm = () => {
   }
 };
 
-window.addEventListener('load', initSubscribeForm);
 document.addEventListener('DOMContentLoaded', initSubscribeForm);
 
 // ========================================================================
@@ -238,7 +226,6 @@ const initToast = () => {
   });
 };
 
-window.addEventListener('load', initToast);
 document.addEventListener('DOMContentLoaded', initToast);
 
 // ========================================================================
@@ -246,10 +233,8 @@ document.addEventListener('DOMContentLoaded', initToast);
 // ========================================================================
 
 const openModal = () => {
-  console.log('openModal called');
   const modal = document.getElementById('modal');
   if (!modal) {
-    console.error('Modal not found!');
     return;
   }
   
@@ -382,7 +367,6 @@ const clearErrors = () => {
 const initModal = () => {
   const modal = document.getElementById('modal');
   if (!modal) {
-    console.error('Modal element not found!');
     return;
   }
   
@@ -390,7 +374,6 @@ const initModal = () => {
   document.addEventListener('click', (e) => {
     const target = e.target.closest('[data-modal-open]');
     if (target) {
-      console.log('Modal open button clicked:', target);
       e.preventDefault();
       e.stopPropagation();
       openModal();
@@ -546,15 +529,5 @@ const initModal = () => {
 
 // Инициализация при загрузке
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded, initializing modal...');
   initModal();
-  
-  // Дополнительная проверка через небольшую задержку
-  setTimeout(() => {
-    const buttons = document.querySelectorAll('[data-modal-open]');
-    console.log(`Found ${buttons.length} buttons with data-modal-open`);
-    if (buttons.length === 0) {
-      console.error('No buttons found! Check HTML.');
-    }
-  }, 100);
 });

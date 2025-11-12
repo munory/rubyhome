@@ -90,10 +90,8 @@
   position: absolute;
   right: 24px;
   top: 24px;
-  opacity: 1; /* SVG уже содержит opacity=0.1 внутри, иначе стало слишком бледно */
+  opacity: 1;
 }
-
-/* pagination удалена по требованию */
 
 /* Custom dots container under reviews */
 .reviews__dots {
@@ -101,7 +99,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: -15px auto 0; /* на 10px ниже карточек */
+  margin: -15px auto 0;
 }
 
 .reviews__dot {
@@ -116,7 +114,6 @@
 
 .reviews__dot--active { background: var(--color-primary); }
 
-/* bullets удалены */
 
 /* ========================================================================
    SUBSCRIBE / ПОДПИСКА НА EMAIL
@@ -130,7 +127,7 @@
 
 .subscribe__container {
   max-width: 1146px;
-  width: 1146px;
+  width: 100%;
   height: 403px;
   margin: 0 auto;
   padding: 70px;
@@ -252,7 +249,10 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .subscribe__title {
@@ -277,7 +277,10 @@
 
 @media (max-width: 640px) {
   .subscribe__container {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
   }
 
   .subscribe__title {
@@ -310,7 +313,7 @@
 
 .footer__container {
   max-width: 1600px;
-  width: 1600px;
+  width: 100%;
   height: 164px;
   margin: 0 auto;
   padding: 70px;
@@ -330,14 +333,20 @@
 }
 
 @media (max-width: 768px) {
-  .reviews { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+  .reviews {
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
+  }
 
   .footer__container {
     width: 100%;
     max-width: 100%;
     height: auto;
     min-height: 164px;
-    padding: 70px var(--spacing-lg);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .footer__text {
@@ -500,7 +509,7 @@
 .modal__choice-group {
   display: flex;
   gap: 10px;
-  flex-wrap: nowrap; /* все кнопки в один ряд */
+  flex-wrap: nowrap;
 }
 
 .modal__choice-btn {
@@ -724,7 +733,21 @@ body.modal-open {
 }
 
 @media (max-width: 640px) {
-  .reviews__title { font-size: var(--font-size-3xl); }
+  .reviews {
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+  }
+
+  .reviews__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .footer__container {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+  }
 }
 /* ========================================================================
    ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
@@ -782,10 +805,12 @@ body.modal-open {
   --transition-fast: 150ms ease-in-out;
   --transition-base: 200ms ease-in-out;
   --transition-slow: 300ms ease-in-out;
+  
+  /* Мобильные отступы - единые для всех контейнеров */
+  --mobile-padding-x: var(--spacing-md);
+  --tablet-padding-x: var(--spacing-lg);
+  --desktop-padding-x: var(--spacing-xl);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -833,7 +858,6 @@ body {
   height: 100%;
 }
 
-/* Logo */
 .header__logo {
   display: flex;
   align-items: center;
@@ -861,7 +885,6 @@ body {
   display: block;
 }
 
-/* Navigation */
 .header__nav {
   display: flex;
   align-items: center;
@@ -902,7 +925,6 @@ body {
   font-weight: var(--font-weight-semibold);
 }
 
-/* Button */
 .header__button {
   padding: var(--spacing-md) var(--spacing-2xl);
   background-color: var(--color-primary);
@@ -1047,7 +1069,7 @@ body {
   width: 100%;
   background-color: var(--color-white);
   padding-top: var(--spacing-3xl);
-  padding-bottom: var(--spacing-3xl);
+  padding-bottom: calc(var(--spacing-2xl) * 1.5); /* Отступ снизу (72px) */
   padding-left: 0;
   padding-right: 0;
 }
@@ -1082,8 +1104,7 @@ body {
 }
 
 .partners__logo {
-  max-height: 70px;
-  width: auto;
+  max-height: 90px;  width: auto;
   object-fit: contain;
   opacity: 0.7;
   transition: opacity var(--transition-base);
@@ -1212,7 +1233,7 @@ body {
 .properties {
   width: 100%;
   background-color: var(--color-white);
-  padding-top: var(--spacing-3xl);
+  padding-top: calc(var(--spacing-3xl) * 1.5); /* Отступ сверху (96px) */
   padding-bottom: var(--spacing-3xl);
   padding-left: 0;
   padding-right: 0;
@@ -1389,6 +1410,168 @@ body {
 }
 
 /* ========================================================================
+   DESKTOP ADAPTIVE / АДАПТИВНОСТЬ ДЛЯ СРЕДНИХ ЭКРАНОВ (1100px)
+   ======================================================================== */
+
+@media (max-width: 1100px) {
+  /* HEADER - Шапка: скрыть навигацию, оставить логотип и кнопку */
+  .header__nav {
+    display: none;
+  }
+
+  .header__container {
+    justify-content: space-between;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    gap: 0;
+  }
+
+  .header__logo {
+    margin-right: 0;
+  }
+
+  /* HERO - Главный блок: background-image, центрирование текста */
+  .hero {
+    background-image: url('../assets/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+  }
+
+  .hero__container {
+    position: relative;
+    z-index: 2;
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__content {
+    text-align: center;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero__image-wrapper {
+    display: none;
+  }
+
+  .hero__title {
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero__button {
+    margin: 0 auto;
+  }
+
+  /* PARTNERS - Партнеры: уменьшить логотипы и отступы */
+  .partners {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    margin-bottom: calc(var(--spacing-2xl) * 1.5); /* Отступ между блоками (72px) */
+  }
+
+  .partners__logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Для абсолютного позиционирования нижних логотипов */
+  }
+
+  .partners__logo {
+    max-height: 75px;  }
+
+  /* Последние 2 логотипа размещаем в промежутках между верхними тремя */
+  .partners__logo:nth-child(4) {
+    /* Абсолютное позиционирование относительно контейнера */
+    position: absolute;
+    /* Позиция между 1-м и 2-м верхними: начало + 1 колонка + половина gap */
+    left: calc((100% / 3) + (var(--spacing-xl) / 2));
+    /* Вертикальная позиция: под первой строкой (высота логотипа + gap) */
+    top: calc(75px + var(--spacing-xl));
+    transform: translateX(-50%); /* Центрируем сам логотип */
+  }
+
+  .partners__logo:nth-child(5) {
+    /* Абсолютное позиционирование относительно контейнера */
+    position: absolute;
+    /* Позиция между 2-м и 3-м верхними: начало + 2 колонки + половина gap */
+    left: calc((100% / 3) * 2 + (var(--spacing-xl) / 2));
+    /* Вертикальная позиция: под первой строкой (высота логотипа + gap) */
+    top: calc(75px + var(--spacing-xl));
+    transform: translateX(-50%); /* Центрируем сам логотип */
+  }
+
+  /* PROPERTIES - Популярные объекты: 2 колонки вместо 3 */
+  .properties {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+
+  .properties__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl); /* Увеличенный отступ между карточками (48px) */
+  }
+
+  /* FEATURES - Property Featured: убрать изображение, 2 колонки */
+  .features {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .features__image-col {
+    display: none;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* REVIEWS - Отзывы: одинаковые отступы */
+  .reviews {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+
+  /* SUBSCRIBE - Подписка: одинаковые отступы */
+  .subscribe {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+
+  .subscribe__container {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+}
+
+/* ========================================================================
    MOBILE / АДАПТИВНОСТЬ
    ======================================================================== */
 
@@ -1400,7 +1583,10 @@ body {
   .header__container {
     max-width: 100%;
     gap: var(--spacing-md);
-    padding: var(--spacing-md);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
     height: auto;
   }
 
@@ -1419,7 +1605,27 @@ body {
   }
 
   .hero {
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
+    /* Сохраняем background-image из медиазапроса 1100px */
+    background-image: url('../assets/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
   }
 
   .hero__container {
@@ -1427,26 +1633,40 @@ body {
     height: auto;
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__content {
+    text-align: center;
+    align-items: center;
   }
 
   .hero__image-wrapper {
-    width: 100%;
-    height: auto;
+    display: none; /* Скрыть изображение на планшетах тоже */
   }
 
   .hero__title {
     font-size: var(--font-size-3xl);
+    text-align: center;
+    min-height: auto;
   }
 
   .hero__subtitle {
     font-size: var(--font-size-base);
   }
 
+  .hero__button {
+    margin: 0 auto;
+  }
+
   .partners {
     padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-bottom: calc(var(--spacing-xl) * 1.5); /* Отступ снизу (48px) */
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .partners__logos {
@@ -1454,12 +1674,11 @@ body {
   }
 
   .partners__logo {
-    max-height: 60px;
-  }
+    max-height: 75px;  }
 
   .features {
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .features__grid {
@@ -1473,10 +1692,10 @@ body {
   }
 
   .properties {
-    padding-top: var(--spacing-2xl);
+    padding-top: calc(var(--spacing-2xl) * 1.5); /* Отступ сверху (72px) */
     padding-bottom: var(--spacing-2xl);
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .properties__title {
@@ -1521,7 +1740,10 @@ body {
     flex-wrap: wrap;
     gap: var(--spacing-md);
     max-width: 100%;
-    padding: var(--spacing-md);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
     height: auto;
   }
 
@@ -1547,53 +1769,145 @@ body {
   }
 
   .header__button {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-xs);
-  }
+    padding: var(--spacing-md) var(--spacing-lg);    font-size: var(--font-size-base);  }
 
   .hero {
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    /* Сохраняем background-image */
+    background-image: url('../assets/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
   }
 
   .hero__container {
-    max-width: 100%;
-    height: auto;
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__content {
+    text-align: center;
+    align-items: center;
   }
 
   .hero__title {
     font-size: var(--font-size-2xl);
+    text-align: center;
   }
 
   .hero__subtitle {
     font-size: var(--font-size-sm);
   }
 
+  .hero__image-wrapper {
+    display: none; /* Скрыть изображение на мобильных */
+  }
+
   .hero__button {
     padding: var(--spacing-sm) var(--spacing-lg);
     font-size: var(--font-size-sm);
+    margin: 0 auto;
   }
 
   .partners {
     padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-bottom: 0; /* Убираем padding-bottom */
+    padding-left: var(--spacing-2xl); /* Центрирование */
+    padding-right: var(--spacing-2xl);
+    margin-bottom: calc(var(--spacing-2xl) * 1.5); /* Отступ между блоками (72px) */
   }
 
   .partners__title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl); /* Увеличен до размера заголовка Popular Properties */
   }
 
   .partners__logos {
-    gap: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md); /* 16px отступы */
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Для абсолютного позиционирования нижних логотипов */
   }
 
   .partners__logo {
-    max-height: 50px;
+    max-height: 65px;  }
+
+  /* Последние 2 логотипа размещаем в промежутках между верхними тремя */
+  /* Они должны быть точно между верхними логотипами (где красные точки) */
+  .partners__logo:nth-child(4) {
+    /* Абсолютное позиционирование относительно контейнера */
+    position: absolute;
+    /* Позиция между 1-м и 2-м верхними: начало + 1 колонка + половина gap */
+    left: calc((100% / 3) + (var(--spacing-md) / 2));
+    /* Вертикальная позиция: под первой строкой (высота логотипа + gap) */
+    top: calc(65px + var(--spacing-md));    transform: translateX(-50%); /* Центрируем сам логотип */
+  }
+
+  .partners__logo:nth-child(5) {
+    /* Абсолютное позиционирование относительно контейнера */
+    position: absolute;
+    /* Позиция между 2-м и 3-м верхними: начало + 2 колонки + половина gap */
+    left: calc((100% / 3) * 2 + (var(--spacing-md) / 2));
+    /* Вертикальная позиция: под первой строкой (высота логотипа + gap) */
+    top: calc(65px + var(--spacing-md));    transform: translateX(-50%); /* Центрируем сам логотип */
+  }
+
+  /* Вертикальное расположение эмблем на очень маленьких экранах */
+  @media (max-width: 480px) {
+    .partners__logos {
+      display: grid;
+      grid-template-columns: 1fr; /* Одна колонка - вертикальное расположение */
+      gap: var(--spacing-lg); /* Вертикальные отступы между эмблемами */
+      justify-items: center; /* Горизонтальное центрирование */
+      align-items: center;
+      width: 100%;
+      position: static; /* Убираем relative, так как абсолютное позиционирование не нужно */
+    }
+
+    .partners__logo {
+      max-height: 65px;      /* Сбрасываем все абсолютное позиционирование */
+      position: static;
+      left: auto;
+      top: auto;
+      transform: none;
+    }
+
+    /* Убираем специальное позиционирование для 4-го и 5-го логотипов */
+    .partners__logo:nth-child(4),
+    .partners__logo:nth-child(5) {
+      position: static;
+      left: auto;
+      top: auto;
+      transform: none;
+    }
   }
 
   .features__title {
     font-size: var(--font-size-3xl);
+  }
+
+  .features {
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
   }
 
   .features__grid {
@@ -1615,10 +1929,11 @@ body {
   }
 
   .properties {
-    padding-top: var(--spacing-2xl);
+    padding-top: 0; /* Убираем padding-top */
     padding-bottom: var(--spacing-2xl);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    margin-top: 0;
   }
 
   .properties__title {
@@ -1662,9 +1977,7 @@ body {
   }
 
   .property-card__button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-xs);
-  }
+    padding: var(--spacing-md) var(--spacing-lg);    font-size: var(--font-size-base);  }
 }
 
 /* ========================================================================
@@ -1811,7 +2124,7 @@ body {
 
 .privacy__footer-container {
   max-width: 1600px;
-  width: 1600px;
+  width: 100%;
   margin: 0 auto;
   padding: 70px;
   display: flex;
@@ -1875,7 +2188,10 @@ body {
   }
 
   .privacy__footer-container {
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--tablet-padding-x);
+    padding-right: var(--tablet-padding-x);
   }
 
   .privacy__footer-text {
@@ -1899,5 +2215,20 @@ body {
   .privacy__back-button {
     font-size: var(--font-size-sm);
     padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .privacy__back-wrapper {
+    padding: 0 var(--mobile-padding-x);
+  }
+
+  .privacy__container {
+    padding: 0 var(--mobile-padding-x);
+  }
+
+  .privacy__footer-container {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
   }
 }
