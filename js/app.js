@@ -47,7 +47,13 @@ document.addEventListener('DOMContentLoaded', initNavigation);
 
 const initReviewsSlider = () => {
   const sliderEl = document.querySelector('.reviews__slider');
-  if (!sliderEl || typeof Swiper === 'undefined') return;
+  if (!sliderEl) return;
+  
+  // Ждем загрузки Swiper, если еще не загрузился
+  if (typeof Swiper === 'undefined') {
+    setTimeout(initReviewsSlider, 100);
+    return;
+  }
   // eslint-disable-next-line no-new
   const swiper = new Swiper(sliderEl, {
     slidesPerView: 2,

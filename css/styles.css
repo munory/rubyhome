@@ -1499,7 +1499,12 @@ body {
   }
 
   .partners__logo {
-    max-height: 75px;  }
+    max-height: 75px;
+  }
+
+  .partners__title {
+    font-size: var(--font-size-3xl);
+  }
 
   /* Последние 2 логотипа размещаем в промежутках между верхними тремя */
   .partners__logo:nth-child(4) {
@@ -1674,7 +1679,12 @@ body {
   }
 
   .partners__logo {
-    max-height: 75px;  }
+    max-height: 75px;
+  }
+
+  .partners__title {
+    font-size: var(--font-size-3xl);
+  }
 
   .features {
     padding-left: var(--tablet-padding-x);
@@ -1682,13 +1692,23 @@ body {
   }
 
   .features__grid {
-    grid-template-columns: 1fr 320px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
   }
 
-  .features__image-wrapper {
-    width: 320px;
-    height: 440px;
+  .features__image-col {
+    display: none;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 202px;
+  }
+
+  .feature-card__text {
+    max-width: 100%;
   }
 
   .properties {

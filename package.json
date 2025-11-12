@@ -1,0 +1,13 @@
+{
+  "name": "rubyhome",
+  "version": "1.0.0",
+  "description": "RubyHome - Luxury Real Estate Landing Page",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "swiper": "^10.0.0"
+  }
+}
+
